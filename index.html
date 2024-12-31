@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy New Year, Mermaid</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #282c34;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      overflow-y: auto; /* Enable vertical scrolling */
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      padding: 50px;
+      background: linear-gradient(to right, #00aaff, #00b3b3);
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+      width: 80%;
+      margin: auto;
+      animation: fadeIn 1.5s ease-in;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: bounce 1s infinite alternate;
+    }
+
+    .message {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      color: #ffd700;
+      animation: fadeIn 2s ease-in;
+    }
+
+    #countdown {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-size: 2rem;
+      color: #ff1493;
+      margin: 30px 0;
+      animation: fadeIn 2s ease-in;
+    }
+
+    #countdown div {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      color: #282c34;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #newYearMessage {
+      animation: fadeIn 2s ease-in;
+      background: #f9f9f9;
+      border-radius: 5px;
+      padding: 30px;
+      margin-top: 30px;
+    }
+
+    .poem {
+      font-size: 1.2rem;
+      margin: 20px 0;
+      color: #ff69b4;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      color: #ff6347;
+    }
+
+    .label {
+      font-size: 1rem;
+      color: #ff1493;
+    }
+
+    /* Button Style */
+    #playButton1, #playButton2 {
+      background-color: #ff6347;
+      color: white;
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+
+    #playButton1:hover, #playButton2:hover {
+      background-color: #ff1493;
+    }
+
+    /* Sparkle Background */
+    #sparkle-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    @keyframes sparkle {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .sparkle {
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.8);
+      animation: sparkle 1s infinite;
+    }
+
+    /* Scrollable Content */
+    .scrollable-content {
+      max-height: 80vh; /* Ensure the message doesn't overflow */
+      overflow-y: auto;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>✨ Countdown to New Year ✨</h1>
+    <p class="message">For my dearest Mermaid 🧜‍♀️, with love and magic...</p>
+    
+    <div id="countdown">
+      <div><span id="days">00</span><br><span class="label">Days</span></div>
+      <div><span id="hours">00</span><br><span class="label">Hours</span></div>
+      <div><span id="minutes">00</span><br><span class="label">Minutes</span></div>
+      <div><span id="seconds">00</span><br><span class="label">Seconds</span></div>
+    </div>
+
+    <div id="newYearMessage" class="hidden scrollable-content">
+      <h2>🎉 Happy New Year, MY Mermaid! 🎉</h2>
+      <p class="poem">
+        May this year be full of joy,  
+        Like stars that light the endless sky.  
+        With every wave, my heart's in tune,  
+        A mermaid’s love—my sweetest boon. 💖<br><br>
+        Pehle to sorry to make you sad at that moment ye poem sun ke bhul jana ok!!!<br>
+        Tonight as the clock strikes midnight, I couldn't imagine a better way to start the year than by being honest with you.  
+        You already know you are my cute little mermaid. And over time, you have grown to be more than a friend to me.<br>
+        Vaise I don’t know what more to say, but I find myself wishing for more moments with you this coming year.  
+        I don’t expect the same in return, toh guilt vagera ni lena kuch.<br>
+        Above all, I wish you great health and endless happiness in this year.  
+        Wishing you a beautiful and Happy New Year.<br>
+    
+        Regards, <br> 
+        Personal secretary, merman
+    </p>
+    
+      <h3>Stay Smiling 😊</h3>
+    </div>
+
+    <!-- Play Button for Countdown Music -->
+    <button id="playButton1">Play Countdown Music 🎶</button>
+
+    <!-- Play Button for New Year Music -->
+    <button id="playButton2" class="hidden">Play New Year Music 🎶</button>
+  </div>
+
+  <!-- Hidden audio players -->
+  <audio id="countdownAudio" loop muted>
+    <source src="romantic_song.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <audio id="newYearAudio" loop muted>
+    <source src="romantic2.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Sparkle Background -->
+  <div id="sparkle-background"></div>
+
+  <!-- External JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
